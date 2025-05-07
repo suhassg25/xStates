@@ -60,7 +60,7 @@ const handler = (target, value)=>{
     <Options name="state" countries={states.data} isSelected={states.isSelected} handler={handler}/>
     <Options name="city" countries={cities.data} isSelected={cities.isSelected} handler={handler}/>
     </div>
-    {cities.valueSelected!=="" ? <div> <span style={{fontWeight : 700, display : "flex", textAlign : "center", justifyContent : "center", alignItems: "center", gap : "6px"}}>  You selected  <span style={{fontWeight : 800, fontSize : "25px", marginTop : "-7px"}}> {cities.valueSelected} </span> <span style={{color : 'GrayText'}}>{states.valueSelected} {countries.valueSelected} </span> </span> </div> : ""}
+    {cities.valueSelected!=="" ?  <span style={{fontWeight : 700, display : "flex", textAlign : "center", justifyContent : "center", alignItems: "center", gap : "6px"}}>  You selected {cities.valueSelected}, {states.valueSelected}, {countries.valueSelected} </span>  : ""}
     </div>
     
   )
