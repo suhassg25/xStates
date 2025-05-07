@@ -9,8 +9,8 @@ return(
 
     <select id={name} onChange={handleChange} disabled={isSelected} >
         <option value="">{`Select ${name}`}</option>
-        {countries.map((item, index) => {
-            return <option key={index} value={item}>{item}</option>
+        {countries.map((item) => {
+            return <option key={item} value={item}>{item}</option>
         })}
     </select>
         </div>
