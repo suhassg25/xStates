@@ -35,15 +35,15 @@ const fetchCity= async ()=>{
 useEffect(()=>{fetchCity();},[states.valueSelected]);
 
 const handler = (target, value)=>{
-  if(target === "countries"){
+  if(target === "country"){
     setCountries({data: countries.data, isSelected: false, valueSelected: value});
     setStates({data: [], isSelected: false, valueSelected: ""}); 
     setCities({data: [], isSelected: true, valueSelected: ""}); 
   }
-  else if(target === "states"){
+  else if(target === "state"){
     setStates({data: states.data, isSelected: false, valueSelected: value});   
     setCities({data: [], isSelected: false, valueSelected: ""}); 
-  }else if(target === "cities"){
+  }else if(target === "city"){
     setCities({data: cities.data, isSelected: false, valueSelected: value});
   }else{
     setCountries({data: [], isSelected: false, valueSelected: ""});
@@ -56,9 +56,9 @@ const handler = (target, value)=>{
   return (
     <div>
     <div style={{display: "flex"}}>
-    <Options name="countries" countries={countries.data} isSelected={countries.isSelected} handler={handler}/>
-    <Options name="states" countries={states.data} isSelected={states.isSelected} handler={handler}/>
-    <Options name="cities" countries={cities.data} isSelected={cities.isSelected} handler={handler}/>
+    <Options name="country" countries={countries.data} isSelected={countries.isSelected} handler={handler}/>
+    <Options name="state" countries={states.data} isSelected={states.isSelected} handler={handler}/>
+    <Options name="city" countries={cities.data} isSelected={cities.isSelected} handler={handler}/>
     </div>
     {cities.valueSelected!=="" ? <div> <span style={{fontWeight : 700, display : "flex", textAlign : "center", justifyContent : "center", alignItems: "center", gap : "6px"}}>  You selected  <span style={{fontWeight : 800, fontSize : "25px", marginTop : "-7px"}}> {cities.valueSelected} </span> <span style={{color : 'GrayText'}}>{states.valueSelected} {countries.valueSelected} </span> </span> </div> : ""}
     </div>
